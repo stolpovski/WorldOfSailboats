@@ -110,12 +110,12 @@ half2 DistortionUVs(half depth, float3 normalWS)
 
 half4 AdditionalData(float3 postionWS, WaveStruct wave)
 {
-    half4 data = half4(0.0, 0.0, 0.0, 0.0);
-    float3 viewPos = TransformWorldToView(postionWS);
-	data.x = length(viewPos / viewPos.z);// distance to surface
-    data.y = length(GetCameraPositionWS().xyz - postionWS); // local position in camera space
-	data.z = wave.position.y / _MaxWaveHeight * 0.5 + 0.5; // encode the normalized wave height into additional data
-	data.w = wave.position.x + wave.position.z;
+    half4 data = half4(1.0, 0.0, 0.0, 0.0);
+    //float3 viewPos = TransformWorldToView(postionWS);
+	//data.x = length(viewPos / viewPos.z);// distance to surface
+    //data.y = length(GetCameraPositionWS().xyz - postionWS); // local position in camera space
+	//data.z = wave.position.y / _MaxWaveHeight * 0.5 + 0.5; // encode the normalized wave height into additional data
+	//data.w = wave.position.x + wave.position.z;
 	return data;
 }
 
