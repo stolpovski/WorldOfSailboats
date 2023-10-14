@@ -1,2 +1,2 @@
 # World of Sailboats
- Sailing Simulator
+ Sailing simulator using URP and [Boat Attack Water](https://github.com/Unity-Technologies/boat-attack-water)
