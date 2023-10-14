@@ -1,2 +1,2 @@
-# WorldOfSailboats
- World of Sailboats
+# World of Sailboats
+ Sailing Simulator
