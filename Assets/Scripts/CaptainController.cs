@@ -16,6 +16,17 @@ public class CaptainController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         controls = new Controls();
         controls.Captain.Enable();
+
+    }
+
+    private void OnEnable()
+    {
+        controls.Captain.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Captain.Disable();
     }
 
     // Update is called once per frame

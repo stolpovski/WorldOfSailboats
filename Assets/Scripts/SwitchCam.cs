@@ -1,10 +1,9 @@
 using Cinemachine;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SwitchCam : MonoBehaviour
 {
+    public GameObject captain;
     Controls controls;
     public CinemachineVirtualCamera camCaptain;
     private int defaultPriority = 2;
@@ -13,7 +12,21 @@ public class SwitchCam : MonoBehaviour
     {
         controls = new Controls();
         controls.Camera.Enable();
-        controls.Camera.Switch.performed += context => camCaptain.Priority = camCaptain.Priority == defaultPriority ? 0 : defaultPriority;
+        controls.Captain.Enable();
+        
+        controls.Camera.Switch.performed += context =>
+        {
+            if (camCaptain.Priority == defaultPriority)
+            {
+                camCaptain.Priority = 0;
+                captain.SetActive(false);
+            }
+            else
+            {
+                camCaptain.Priority = defaultPriority;
+                captain.SetActive(true);
+            }
+        };
     }
 
     // Update is called once per frame
