@@ -8,11 +8,12 @@ public class SwitchCam : MonoBehaviour
     public CinemachineVirtualCamera camCaptain;
     private int defaultPriority = 2;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        Cursor.visible = false;
         controls = new Controls();
         controls.Camera.Enable();
-        controls.Captain.Enable();
+        //controls.Captain.Enable();
         
         controls.Camera.Switch.performed += context =>
         {
